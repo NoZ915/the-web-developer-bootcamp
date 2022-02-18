@@ -24,6 +24,14 @@ app.get("/dogs",(req,res)=>{
     res.send("woof!")
 })
 
+app.get("/search",(req,res)=>{
+    const {q} = req.query
+    if(!q){
+        res.send("nothing found if nothing searched!")
+    }
+    res.send(`search result for ${q}`)
+})
+
 app.listen(port, ()=>{
     console.log("listening on port 3000!")
 })
